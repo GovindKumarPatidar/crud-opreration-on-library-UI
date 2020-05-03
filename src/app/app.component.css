@@ -1,0 +1,9 @@
+.rightSplit{
+    float:right; 
+    width:50%;
+}
+
+.leftSplit{
+    float:left; 
+    width:50%;
+}

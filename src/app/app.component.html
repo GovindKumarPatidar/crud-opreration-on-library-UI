@@ -1,0 +1,29 @@
+  <!-- Resources -->
+  <p>Click on library name to see related books:</p>
+  
+    <div class="leftSplit">
+      <div>
+          <h3>Name</h3>
+      </div>
+    </div>
+
+  <div *ngFor="let library of libraries; let i=index;">
+    <div class="leftSplit">
+      <div>
+        <a [routerLink]="" (click)="displayBooks('bookDiv'+(i+1))">
+          <h4> {{ library.libName }} </h4>
+        </a>
+      </div>
+    </div>
+    <div id="bookDiv{{i+1}}" class="rightSplit" style="display: none;">
+      <div *ngFor="let book of library.books;">
+        <h4>
+          <span>Id: </span>{{ book.bookId }}<br>
+          <span>Name: </span>{{ book.bookName }}<br>
+          <span>Author: </span>{{ book.bookAuthor }}<br>
+        </h4>
+      </div>
+    </div>
+  </div>
+
+  <router-outlet></router-outlet>
